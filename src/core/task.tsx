@@ -42,6 +42,7 @@ export const addtask = (name: string, cb: Function) => {
     id,
     name,
     icon,
+    active: false,
     component: loadComponent(name, {}),
   });
   console.log('add', tasks.length);
@@ -65,5 +66,16 @@ export const alltasks = () => {
 
 export const endTasks = (cb) => {
   tasks.splice(0);
+  cb();
+};
+
+export const activeTask = (id, cb) => {
+  tasks.map((task) => {
+    if (task.id === id) {
+      task.active = true;
+    } else {
+      task.active = false;
+    }
+  });
   cb();
 };

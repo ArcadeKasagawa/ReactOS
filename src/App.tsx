@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Menu } from './UI/menu';
 import './style.css';
-import { alltasks, addtask, deltask, endTasks } from './core/task';
+import { alltasks, addtask, deltask, endTasks, activeTask } from './core/task';
 import Date from './UI/date';
 import Soundonbar from './UI/sound';
 import LoginScreen from './UI/login';
@@ -26,7 +26,11 @@ export default function App() {
         <div id="apps">
           {alltasks().map((task) => {
             return (
-              <div key={task.id} className={`app app_${update}`}>
+              <div
+                key={task.id}
+                style={{ zIndex: task.active ? 999 : 0 }}
+                className={`app app_${update}`}
+              >
                 <div className="title">
                   <span>{task.name}</span>
                 </div>
@@ -58,7 +62,20 @@ export default function App() {
         />
         <div id="taskbar" className={`taskbar_${update}`}>
           {alltasks().map((task) => {
-            return <div className={`taskitem ${update}`}>{task.icon}</div>;
+            return (
+              <div
+                onClick={() => {
+                  activeTask(task.id, () => {
+                    setupdate(update + 1);
+                  });
+                }}
+                className={`taskitem ${
+                  task.active ? 'taskitemactive' : 'taskitemunactive'
+                } ${update}`}
+              >
+                {task.icon}
+              </div>
+            );
           })}
         </div>
         <PCmanager
