@@ -34,6 +34,8 @@ export const addtask = (name: string, cb: Function) => {
       icon = <SettingFilled />;
       break;
     case 'about':
+      w = 600;
+      h = 150;
       icon = <PaperClipOutlined />;
       break;
     case 'video':

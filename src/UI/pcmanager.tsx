@@ -105,7 +105,7 @@ export default ({ appcount, onclean }) => {
       {showWindow && (
         <div class="app">
           <div className="title">PC Manager</div>
-          <div className="body">
+          <div className="paddingbody">
             <Card
               title={
                 <div>

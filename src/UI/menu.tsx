@@ -44,7 +44,7 @@ export const Menu = ({ addtask, addtaskok, logout }: any) => {
             </span>
           </li>
 
-          <li
+          {/* <li
             onClick={() => {
               addtask('chrome', addtaskok);
             }}
@@ -52,9 +52,9 @@ export const Menu = ({ addtask, addtaskok, logout }: any) => {
             <span>
               <ChromeFilled /> chrome
             </span>
-          </li>
+          </li> */}
 
-          <li
+          {/* <li
             onClick={() => {
               addtask('github', addtaskok);
             }}
@@ -62,7 +62,7 @@ export const Menu = ({ addtask, addtaskok, logout }: any) => {
             <span>
               <GithubFilled /> github
             </span>
-          </li>
+          </li> */}
 
           <li
             onClick={() => {
@@ -73,7 +73,7 @@ export const Menu = ({ addtask, addtaskok, logout }: any) => {
               <PlayCircleOutlined /> Video
             </span>
           </li>
-          <li
+          {/* <li
             onClick={() => {
               addtask('settings', addtaskok);
             }}
@@ -81,8 +81,7 @@ export const Menu = ({ addtask, addtaskok, logout }: any) => {
             <span>
               <SettingFilled /> settings
             </span>
-          </li>
-
+          </li> */}
           <li
             onClick={() => {
               logout();

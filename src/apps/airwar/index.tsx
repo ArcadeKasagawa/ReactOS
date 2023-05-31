@@ -166,7 +166,7 @@ export default function App() {
   }, [ctx]);
 
   return (
-    <div>
+    <div id="airwargame">
       <Card title="">
         <canvas ref={canvasRef} />
         <p>WASD Keys over arrows</p>
