@@ -16,6 +16,8 @@ export const addtask = (name: string, cb: Function) => {
       {name[0]}
     </Avatar>
   );
+  let w = 500;
+  let h = 350;
   switch (name) {
     case 'chrome':
       icon = <ChromeFilled />;
@@ -25,6 +27,8 @@ export const addtask = (name: string, cb: Function) => {
       break;
     case 'airwar':
       icon = <div>✈</div>;
+      w = 350;
+      h = 480;
       break;
     case 'settings':
       icon = <SettingFilled />;
@@ -43,6 +47,8 @@ export const addtask = (name: string, cb: Function) => {
     name,
     icon,
     active: false,
+    w,
+    h,
     component: loadComponent(name, {}),
   });
   console.log('add', tasks.length);

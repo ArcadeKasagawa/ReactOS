@@ -28,7 +28,11 @@ export default function App() {
             return (
               <div
                 key={task.id}
-                style={{ zIndex: task.active ? 999 : 0 }}
+                style={{
+                  width: task.w + 'px',
+                  height: task.h + 'px',
+                  zIndex: task.active ? 999 : 0,
+                }}
                 className={`app app_${update}`}
               >
                 <div className="title">
