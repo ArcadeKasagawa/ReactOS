@@ -54,7 +54,10 @@ export const addtask = (name: string, cb: Function) => {
     component: loadComponent(name, {}),
   });
   console.log('add', tasks.length);
-  cb(id);
+
+  activeTask(id, () => {
+    cb(id);
+  });
 };
 
 export const deltask = (id: number, cb: Function) => {
