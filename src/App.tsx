@@ -11,7 +11,7 @@ import { CloseCircleFilled, CloseOutlined } from '@ant-design/icons';
 
 export default function App() {
   const [update, setupdate] = React.useState<number>(0);
-  const [showLoginScreen, setShowLoginScreen] = React.useState<boolean>(false);
+  const [showLoginScreen, setShowLoginScreen] = React.useState<boolean>(true);
   return (
     <div>
       {showLoginScreen && (
@@ -34,6 +34,11 @@ export default function App() {
                   zIndex: task.active ? 999 : 0,
                 }}
                 className={`app app_${update}`}
+                onClick={() => {
+                  activeTask(task.id, () => {
+                    setupdate(update + 1);
+                  });
+                }}
               >
                 <div className="title">
                   <span>{task.name}</span>
